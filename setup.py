@@ -3,7 +3,7 @@ import sys, os
 
 version = '0.0'
 
-setup(name='python-osm/',
+setup(name='osm',
       version=version,
       description="OSM Api",
       long_description="""\
@@ -17,6 +17,7 @@ setup(name='python-osm/',
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
       include_package_data=True,
       zip_safe=False,
+      test_suite='osm.tests.suite',
       install_requires=[
           # -*- Extra requirements: -*-
       ],
