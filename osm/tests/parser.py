@@ -6,7 +6,7 @@ def tearDown(self):
 
 class OSMFileTest(unittest.TestCase):
     def setUp(self):
-        self.file1 = OSMFile("/home/fran/proyectos/pyosm/python-osm/osm/tests/sample1.xml")
+        self.file1 = OSMFile(os.path.dirname(__file__)+"/sample1.xml")
 
     def test_import(self):
         self.failIfEqual(self.file1, None)
