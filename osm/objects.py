@@ -11,10 +11,13 @@ class Node(object):
     
     """
 
-    def __init__(self, id=None, lon=None, lat=None, tags={}):
+    def __init__(self, id, lon=None, lat=None, tags=None):
         self.id = id
         self.lon, self.lat = lon, lat
-        self.tags = tags
+        if tags:
+            self.tags = tags
+        else:
+            self.tags = {}
 
     def __repr__(self):
         return "Node(id=%r, lon=%r, lat=%r, tags=%r)" % (self.id, self.lon, self.lat, self.tags)
@@ -31,10 +34,16 @@ class Way(object):
     
     """
 
-    def __init__(self, id, nodes=[], tags={}):
+    def __init__(self, id, nodes=None, tags=None):
         self.id = id
-        self.nodes = nodes
-        self.tags = tags
+        if nodes:
+            self.nodes = nodes
+        else:
+            self.nodes = []
+        if tags:
+            self.tags = tags
+        else:
+            self.tags = {}
 
     def __repr__(self):
         return "Way(id=%r, nodes=%r, tags=%r)" % (self.id, self.nodes, self.tags)

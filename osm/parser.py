@@ -36,7 +36,6 @@ class OSMFileParser(xml.sax.ContentHandler):
         elif name == 'way':
             self.curr_way = Way(id=attrs['id'])
         elif name == 'tag':
-            #import pdb;pdb.set_trace()
             self.curr_tags[attrs['k']] = attrs['v'] 
         elif name == "nd":
             assert self.curr_node is None, "curr_node (%r) is non-none" % (self.curr_node)
